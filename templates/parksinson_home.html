@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinsson Disease Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+<style>
+body{
+background-image:url("https://wallpaperaccess.com/full/185895.jpg");
+background-repeat:no-repeat;
+background-size:cover;
+}
+ .footer-images img{
+        vertical-align:bottom;
+        border:0;
+        }
+</style>
+</head>
+<body class="bg-secondary">
+    <!-- As a heading -->
+        <div class="text-center">
+        <div class="btn btn-success">
+                <h1 class="text-warning">Parkinsson Disease Prediction</h1>
+            </div>
+        </div>
+
+
+    <br><br>
+        <div class="container col-sm-10">
+
+            <form action="\predict" method="post" class = 'card p-3 bg-white form-group'>
+                <div class="row">
+                    <div class="col-sm-4">
+                                <h5 >MDVP-Fo(Hz)</h5>
+                                <input class="form-control" type="number" name="mdvpfo" id="mdvpfo" required="required">
+                    </div>
+                    <div class="col-sm-4">
+                                <h5 >Spread</h5>
+                                <input class="form-control" type="number" name="spread" id="spread" required="required">
+                    </div>
+                    <div class="col-sm-4">
+                                <h5 >MDVP-Flo(Hz)</h5>
+                                <input class="form-control" type="number" name="mdvpflo" id="mdvpflo" required="required">
+                        </div>
+                    </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-4">
+                                <h5 >MDVP-jitter(%)</h5>
+                                <input type="number" class="form-control" name="mdvpjitter" id ="mdvpjitter" required="required">
+                        </div>
+                    <div class="col-sm-4">
+                                <h5>D2</h5>
+                                <input type="number" class="form-control" name="d2" id="d2" required="required">
+                    </div>
+                    <div class="col-sm-4">
+                                <h5>DFA</h5>
+                                <input type="number" class="form-control" name="dfa" id="dfa" required="required">
+                </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h5 >MDVP-Fhi(Hz)</h5>
+                        <input type="number" class="form-control" name="mdvpfhi" id="mdvpfhi" required="required">
+                            </div>
+                        <div class="col-sm-4">
+                                    <h5>RPDE</h5>
+                                    <input type="number" class="form-control" name="rpde" id="rpde" required="required">
+                        </div>
+             </div>
+                <br>
+
+                <!-- Submit -->
+                <div class="text-center">
+                <input type="submit" value="Submit" class="btn btn-primary">
+                </div>
+            </form>
+            <div class="text-center">
+            {% if prediction==1 %}
+				<h1 class="bg-danger ">You may have chances of Parkinsson Disease.</h1>
+
+			{% elif prediction==0 %}
+				<h1 class=" bg-success ">You don't have chances of Parkinsson Disease.</h1>
+
+			{% endif %}
+            </div>
+            <br>
+    </div>
+    </body>
+</html>
